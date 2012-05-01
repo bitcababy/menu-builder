@@ -1,0 +1,137 @@
+/* Page */
+
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, fieldset, input, th, td {
+  border: 0;
+  outline: none;
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+body {
+  font: normal 13px Arial, sans-serif; }
+
+h2 {
+  font: normal 26px Arial, sans-serif;
+  padding: 20px 0;
+  margin: 0 0 30px 0; }
+
+.wrap {
+  width: 960px;
+  margin: 0 auto; }
+
+.demo-container {
+  padding: 20px 0;
+  h4 {
+    font-size: 14px;
+    margin: 0 0 5px 0; } }
+
+/* Mega Menu Styles */
+
+.mega-menu {
+  ul {
+    list-style: none;
+    li {
+      list-style: none;
+      ul {
+        display: none; } }
+    position: relative;
+    padding: 0;
+    margin: 0; }
+  .sub {
+    display: none;
+    ul {
+      display: block; } } }
+
+#mega-menu-1 {
+  font: normal 13px Arial, sans-serif;
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  .sub ul {
+    display: block; }
+  background: #222;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    a {
+      float: left;
+      display: block;
+      color: #fff;
+      padding: 12px 25px;
+      background: #222;
+      text-decoration: none; }
+    &.mega-hover a {
+      background: #CCC;
+      color: #000;
+      &:hover {
+        background: #CCC;
+        color: #000; } }
+    a:hover {
+      background: #999;
+      color: #000; }
+    .sub-container {
+      position: absolute; }
+    .sub {
+      background: #efefef;
+      padding: 15px;
+      border: 1px solid #ccc;
+      .row {
+        width: 100%;
+        overflow: hidden;
+        clear: both; }
+      li {
+        list-style: none;
+        float: none;
+        width: 170px;
+        font-size: 1em;
+        font-weight: normal;
+        &.mega-hdr {
+          margin: 0 10px 10px 0;
+          float: left;
+          &.last {
+            margin-right: 0; } } }
+      a {
+        background: none;
+        color: #111;
+        padding: 7px 10px;
+        display: block;
+        float: none;
+        font-size: 0.9em; }
+      li.mega-hdr a.mega-hdr-a {
+        padding: 5px 15px;
+        margin-bottom: 5px;
+        background: #6B6B6B;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #fff;
+        &:hover {
+          color: #000; } } } }
+  .sub {
+    li.mega-hdr li a {
+      padding: 4px 5px;
+      font-weight: normal;
+      &:hover {
+        color: #a32403;
+        background: #efefef; } }
+    ul li {
+      padding-right: 0; } }
+  li .sub-container.non-mega {
+    .sub {
+      padding: 10px; }
+    li {
+      padding: 0;
+      width: 190px;
+      margin: 0;
+      a {
+        padding: 7px 5px 7px 22px;
+        &:hover {
+          color: #a32403;
+          background: #efefef; } } } } }

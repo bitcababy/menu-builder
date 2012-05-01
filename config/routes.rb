@@ -1,10 +1,12 @@
 MenuBuilder::Application.routes.draw do
 	
-  get "test/dropdown1"
+	1.upto(2) do |i|
+  	get "test/dropdown#{i}"
+	end
 
   get "test/vertical"
 
-	root :to => 'test#dropdown1'
+	root :to => 'test#dropdown2'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

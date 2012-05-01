@@ -46,6 +46,7 @@ group :development, :test do
 	gem 'growl'
 	gem 'ruby_gntp'
 	gem 'rspec-rails'
+	gem 'rspec-cells'
 end
 
 group :test do

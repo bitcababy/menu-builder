@@ -1,4 +1,11 @@
 MenuBuilder::Application.routes.draw do
+	
+  get "test/dropdown1"
+
+  get "test/vertical"
+
+	root :to => 'test#dropdown1'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

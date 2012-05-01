@@ -1,0 +1,149 @@
+.wrap
+	%h2
+		jQuery Mega Drop Down Menu Plugin v 1.3.3 -
+		%a{:href => "http://www.designchemical.com/lab/jquery-mega-drop-down-menu-plugin/getting-started/"} Visit Plugin Site
+	.demo-container
+		%h3 Basic Styling, Items Per Row: 3, Speed: Fast, Effect: Fade In, Event: Click, Full Width: True
+		%ul#mega-menu-1.mega-menu
+			%li
+				%a{:href => "test.html"} Home
+			%li
+				%a{:href => "test.html"} Products
+				%ul
+					%li
+						%a{:href => "#"} Mobile Phones & Accessories
+						%ul
+							%li
+								%a{:href => "#"} Product 1
+							%li
+								%a{:href => "#"} Product 2
+							%li
+								%a{:href => "#"} Product 3
+					%li
+						%a{:href => "#"} Desktop
+						%ul
+							%li
+								%a{:href => "#"} Product 4
+							%li
+								%a{:href => "#"} Product 5
+							%li
+								%a{:href => "#"} Product 6
+							%li
+								%a{:href => "#"} Product 7
+							%li
+								%a{:href => "#"} Product 8
+							%li
+								%a{:href => "#"} Product 9
+					%li
+						%a{:href => "#"} Laptop
+						%ul
+							%li
+								%a{:href => "#"} Product 10
+							%li
+								%a{:href => "#"} Product 11
+							%li
+								%a{:href => "#"} Product 12
+							%li
+								%a{:href => "#"} Product 13
+					%li
+						%a{:href => "#"} Accessories
+						%ul
+							%li
+								%a{:href => "#"} Product 14
+							%li
+								%a{:href => "#"} Product 15
+					%li
+						%a{:href => "#"} Software
+						%ul
+							%li
+								%a{:href => "#"} Product 16
+							%li
+								%a{:href => "#"} Product 17
+							%li
+								%a{:href => "#"} Product 18
+							%li
+								%a{:href => "#"} Product 19
+			%li
+				%a{:href => "#"} Sale
+				%ul
+					%li
+						%a{:href => "#"} Special Offers
+						%ul
+							%li
+								%a{:href => "#"} Offer 1
+							%li
+								%a{:href => "#"} Offer 2
+							%li
+								%a{:href => "#"} Offer 3
+					%li
+						%a{:href => "#"} Reduced Price
+						%ul
+							%li
+								%a{:href => "#"} Offer 4
+							%li
+								%a{:href => "#"} Offer 5
+							%li
+								%a{:href => "#"} Offer 6
+							%li
+								%a{:href => "#"} Offer 7
+					%li
+						%a{:href => "#"} Clearance Items
+						%ul
+							%li
+								%a{:href => "#"} Offer 9
+					%li.menu-item-129
+						%a{:href => "#"} Ex-Stock
+						%ul
+							%li
+								%a{:href => "#"} Offer 10
+							%li
+								%a{:href => "#"} Offer 11
+							%li
+								%a{:href => "#"} Offer 12
+							%li
+								%a{:href => "#"} Offer 13
+			%li
+				%a{:href => "#"} About Us
+				%ul
+					%li
+						%a{:href => "#"} About Page 1
+					%li
+						%a{:href => "#"} About Page 2
+			%li
+				%a{:href => "#"} Services
+				%ul
+					%li
+						%a{:href => "#"} Service 1
+						%ul
+							%li
+								%a{:href => "#"} Service Detail A
+							%li
+								%a{:href => "#"} Service Detail B
+					%li
+						%a{:href => "#"} Service 2
+						%ul
+							%li
+								%a{:href => "#"} Service Detail C
+					%li
+						%a{:href => "#"} Service 3
+						%ul
+							%li
+								%a{:href => "#"} Service Detail D
+							%li
+								%a{:href => "#"} Service Detail E
+							%li
+								%a{:href => "#"} Service Detail F
+					%li
+						%a{:href => "#"} Service 4
+			%li
+				%a{:href => "#"} Contact us
+
+				:coffeescript
+				$(document).ready ($) ->
+					$("#mega-menu-1").dcMegaMenu
+						rowItems: "3"
+						speed: 0
+						effect: "slide"
+						event: "click"
+						fullWidth: true
+

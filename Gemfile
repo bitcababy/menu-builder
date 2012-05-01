@@ -39,7 +39,6 @@ gem 'cells'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :development do
-	gem 'cucumber-rails'
 	gem 'thin'
 end
 
@@ -50,6 +49,7 @@ group :development, :test do
 end
 
 group :test do
+gem 'cucumber-rails'
 	gem 'rspec'
 	gem 'cucumber'
 	gem 'machinist'

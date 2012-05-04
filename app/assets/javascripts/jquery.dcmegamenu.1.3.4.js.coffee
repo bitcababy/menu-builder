@@ -14,8 +14,8 @@
       direction: "horizontal"
       classParent: "dc-mega"
       classContainer: "sub-container"
-      classSubParent: "mega-hdr"
-      classSubLink: "mega-hdr"
+      classSubParent: "hmenu-hdr"
+      classSubLink: "hmenu-hdr"
       classWidget: "dc-extra"
       rowItems: 3
       speed: "fast"

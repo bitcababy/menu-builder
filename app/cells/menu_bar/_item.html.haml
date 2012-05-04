@@ -1,0 +1,6 @@
+%li
+	%a{:href => item.link}= item.text
+	- if item.children.count > 0
+		%ul{id: item.text.downcase.gsub(/ /, '_')}
+			= render partial: 'item', collection: item.children
+		

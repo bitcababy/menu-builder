@@ -42,17 +42,16 @@ group :development do
 	gem 'thin'
 end
 
-group :development, :test do
+group :test do
+	gem 'capybara'
+	gem 'akephalos2', require: 'akephalos', git: 'git@github.com:bitcababy/akephalos2.git'
 	gem 'growl'
 	gem 'ruby_gntp'
+	gem 'rspec'
 	gem 'rspec-rails'
 	gem 'rspec-cells'
-end
-
-group :test do
-gem 'cucumber-rails'
-	gem 'rspec'
 	gem 'cucumber'
+	gem 'cucumber-rails'
 	gem 'machinist'
 	gem 'pickle'
 	gem 'database_cleaner'
@@ -62,5 +61,3 @@ gem 'cucumber-rails'
 	gem 'guard-cucumber'
 	gem 'guard-coffeescript'
 	gem 'guard-bundler'
-	gem 'capybara'
-end

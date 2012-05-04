@@ -11,6 +11,7 @@
 (($) ->
   $.fn.dcMegaMenu = (options) ->
     defaults =
+      direction: "horizontal"
       classParent: "dc-mega"
       classContainer: "sub-container"
       classSubParent: "mega-hdr"

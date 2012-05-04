@@ -11,6 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 10) do
+
+  create_table "menus", :force => true do |t|
+    t.string   "type"
+    t.integer  "parent_id"
+    t.string   "text"
+    t.boolean  "enabled"
+    t.boolean  "visible"
+    t.string   "link"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "menus", ["parent_id"], :name => "index_menus_on_parent_id"
 
 end

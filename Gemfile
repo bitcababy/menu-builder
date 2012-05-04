@@ -61,3 +61,4 @@ group :test do
 	gem 'guard-cucumber'
 	gem 'guard-coffeescript'
 	gem 'guard-bundler'
+end

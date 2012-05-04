@@ -30,6 +30,7 @@
 
     options = $.extend(defaults, options)
     $dcMegaMenuObj = this
+
     $dcMegaMenuObj.each (options) ->
       megaOver = ->
         subNav = $(".sub", this)
@@ -37,25 +38,30 @@
         $(subNav).fadeIn defaults.speed  if defaults.effect is "fade"
         $(subNav).show defaults.speed  if defaults.effect is "slide"
         defaults.beforeOpen.call this
+
       megaAction = (obj) ->
         subNav = $(".sub", obj)
         $(obj).addClass "mega-hover"
         $(subNav).fadeIn defaults.speed  if defaults.effect is "fade"
         $(subNav).show defaults.speed  if defaults.effect is "slide"
         defaults.beforeOpen.call this
+
       megaOut = ->
         subNav = $(".sub", this)
         $(this).removeClass "mega-hover"
         $(subNav).hide()
         defaults.beforeClose.call this
+
       megaActionClose = (obj) ->
         subNav = $(".sub", obj)
         $(obj).removeClass "mega-hover"
         $(subNav).hide()
         defaults.beforeClose.call this
+
       megaReset = ->
         $("li", $dcMegaMenuObj).removeClass "mega-hover"
         $(".sub", $dcMegaMenuObj).hide()
+
       megaSetup = ->
         $arrow = "<span class=\"dc-mega-icon\"></span>"
         clParentLi = clParent + "-li"

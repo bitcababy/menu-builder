@@ -1,4 +1,4 @@
-.mega-menu {
+.hmenu {
   ul {
     list-style: none;
     li {
@@ -16,7 +16,7 @@
 .orange {
   font: normal 13px Arial, sans-serif;
   line-height: 16px;
-  ul.mega-menu {
+  ul.hmenu {
     margin: 0;
     padding: 0;
     border: none;
@@ -74,7 +74,7 @@
           width: 170px;
           font-size: 1em;
           font-weight: normal;
-          &.mega-hdr {
+          &.hmenu-hdr {
             margin: 0 10px 10px 0;
             float: left;
             &.last {
@@ -89,7 +89,7 @@
           float: none;
           text-decoration: none;
           font-size: 0.9em; }
-        li.mega-hdr a.mega-hdr-a {
+        li.hmenu-hdr a.hmenu-hdr-a {
           padding: 5px 5px 5px 15px;
           margin-bottom: 5px;
           background: #e75921 url(images/bg_mega_hdr.png) no-repeat 0 0;
@@ -107,7 +107,7 @@
     border-left: 1px solid #bd3e00;
     position: relative;
     .sub {
-      li.mega-hdr li a {
+      li.hmenu-hdr li a {
         padding: 4px 5px 4px 20px;
         background: url(images/arrow_off.png) no-repeat 5px 8px;
         font-weight: normal;

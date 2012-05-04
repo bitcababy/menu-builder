@@ -25,5 +25,6 @@ ActiveRecord::Schema.define(:version => 10) do
   end
 
   add_index "menus", ["parent_id"], :name => "index_menus_on_parent_id"
+  add_index "menus", ["type"], :name => "index_menus_on_type"
 
 end

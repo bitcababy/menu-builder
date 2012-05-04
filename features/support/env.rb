@@ -4,8 +4,6 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
-require 'cucumber/rails'
-
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
 # order to ease the transition to Capybara we set the default here. If you'd
 # prefer to use XPath just remove this line and adjust any selectors in your
@@ -58,3 +56,8 @@ end
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
 require "#{Rails.root}/spec/support/blueprints"
+
+require 'simplecov'
+SimpleCov.start
+
+

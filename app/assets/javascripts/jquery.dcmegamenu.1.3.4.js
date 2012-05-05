@@ -94,7 +94,7 @@
                   }
                 });
                 hdrs = $(".mega-unit", this);
-                rowSize = parseInt(defaults.rowItems);
+                rowSize = parseInt(defaults.rowItems, 10);
                 i = 0;
                 while (i < hdrs.length) {
                   hdrs.slice(i, i + rowSize).wrapAll("<div class=\"row\" />");
@@ -124,7 +124,7 @@
                   maxValue = undefined;
                   $(".mega-unit > a", this).each(function() {
                     var val;
-                    val = parseInt($(this).height());
+                    val = parseInt($(this).height(), 10);
                     if (maxValue === undefined || maxValue < val) {
                       return maxValue = val;
                     }

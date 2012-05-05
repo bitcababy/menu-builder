@@ -22,6 +22,7 @@
       effect: "fade"
       event: "hover"
       fullWidth: false
+
       onLoad: ->
 
       beforeOpen: ->
@@ -164,6 +165,7 @@
               megaAction $parentLi
             e.preventDefault()
         defaults.onLoad.call this
+
       clSubParent = defaults.classSubParent
       clSubLink = defaults.classSubLink
       clParent = defaults.classParent

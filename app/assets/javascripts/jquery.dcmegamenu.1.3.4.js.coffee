@@ -141,7 +141,8 @@
               $mainSub.hide()
             else
               $("." + clContainer, this).addClass("non-mega").css "left", pl + "px"
-
+              $mainSub.hide()
+			      
         menuHeight = $("> li > a", $dcMegaMenuObj).outerHeight(true)
         $("." + clContainer, $dcMegaMenuObj).css(top: menuHeight + "px").css "z-index", "1000"
         if defaults.event is "hover"

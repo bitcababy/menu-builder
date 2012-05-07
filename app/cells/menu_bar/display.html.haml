@@ -1,10 +1,11 @@
-%ul{id: 'menubar', class: 'hmenu, menubar'}
+%ul{id: 'menubar', class: 'hmenu'}
 	= render partial: 'item', collection: @menubar.children
-	
+
 :coffeescript
 $(document).ready ($) ->
 	$("#menubar").dcMegaMenu
 		rowItems: "3"
 		speed: 0
+		event: 'click',
 		effect: "slide"
 		fullWidth: true

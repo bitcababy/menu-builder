@@ -12,7 +12,7 @@
   $.fn.dcMegaMenu = (options) ->
     defaults =
       direction: "horizontal"
-      classParent: "dc-mega"
+      classParent: "megamenu"
       classContainer: "sub-container"
       classSubParent: "hmenu-hdr"
       classSubLink: "hmenu-hdr"
@@ -64,7 +64,7 @@
         $(".sub", $dcMegaMenuObj).hide()
 
       megaSetup = ->
-        $arrow = "<span class=\"dc-mega-icon\"></span>"
+        $arrow = "<span class=\"mega-icon\"></span>"
         clParentLi = clParent + "-li"
         menuWidth = $dcMegaMenuObj.outerWidth()
         $("> li", $dcMegaMenuObj).each ->

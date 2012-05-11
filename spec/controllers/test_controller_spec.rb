@@ -4,7 +4,7 @@ describe TestController do
 
   describe "GET 'dropdown'" do
     it "returns http success" do
-      get 'dropdown'
+      get 'menubar'
       response.should be_success
     end
   end

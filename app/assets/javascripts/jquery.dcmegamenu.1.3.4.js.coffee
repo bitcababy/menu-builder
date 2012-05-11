@@ -30,9 +30,9 @@
       beforeClose: ->
 
     options = $.extend(defaults, options)
-    $dcMegaMenuObj = this
+    $menuObj = this
 
-    $dcMegaMenuObj.each (options) ->
+    $menuObj.each (options) ->
       megaOver = ->
         subNav = $(".sub", this)
         $(this).addClass "mega-hover"
@@ -60,14 +60,12 @@
         defaults.beforeClose.call this
 
       megaReset = ->
-        $("li", $dcMegaMenuObj).removeClass "mega-hover"
-        $(".sub", $dcMegaMenuObj).hide()
+        $("li", $menuObj).removeClass "mega-hover"
+        $(".sub", $menuObj).hide()
 
       megaSetup = ->
         $arrow = "<span class=\"mega-icon\"></span>"
         clParentLi = clParent + "-li"
-        menuWidth = $dcMegaMenuObj.outerWidth()
-        $("> li", $dcMegaMenuObj).each ->
           $mainSub = $("> ul", this)
           $primaryLink = $("> a", this)
           if $mainSub.length
@@ -143,8 +141,8 @@
               $("." + clContainer, this).addClass("non-mega").css "left", pl + "px"
               $mainSub.hide()
 			      
-        menuHeight = $("> li > a", $dcMegaMenuObj).outerHeight(true)
-        $("." + clContainer, $dcMegaMenuObj).css(top: menuHeight + "px").css "z-index", "1000"
+        menuHeight = $("> li > a", $menuObj).outerHeight(true)
+        $("." + clContainer, $menuObj).css(top: menuHeight + "px").css "z-index", "1000"
         if defaults.event is "hover"
           config =
             sensitivity: 2
@@ -153,12 +151,13 @@
             timeout: 400
             out: megaOut
 
-          $("li", $dcMegaMenuObj).hoverIntent config
+          $("li", $menuObj).hoverIntent config
+
         if defaults.event is "click"
           $("body").mouseup (e) ->
             megaReset()  unless $(e.target).parents(".mega-hover").length
 
-          $("> li > a." + clParent, $dcMegaMenuObj).click (e) ->
+          $("> li > a." + clParent, $menuObj).click (e) ->
             $parentLi = $(this).parent()
             if $parentLi.hasClass("mega-hover")
               megaActionClose $parentLi

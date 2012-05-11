@@ -64,7 +64,7 @@
         $(".sub", $menuObj).hide()
 
       megaSetup = ->
-        $arrow = "<span class=\"mega-icon\"></span>"
+        $arrow = "<span class=\"mbar-icon\"></span>"
         clParentLi = clParent + "-li"
           $mainSub = $("> ul", this)
           $primaryLink = $("> a", this)

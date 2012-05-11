@@ -71,17 +71,17 @@ ul.hmenu {
        text-decoration: none;
        &.megamenu {
          position: relative;
+			
+      .mbar-icon {
+        display: block;
+        position: absolute;
+        top: 18px;
+        right: 15px;
+        width: 8px;
+        height: 6px;
+        background: $menubar-icon-image no-repeat 0 0;
 			}
 			@if $useicon {
- 	      .megamenu-icon  {
-          display: block;
-          position: absolute;
-          top: 18px;
-          right: 15px;
-          width: 8px;
-          height: 6px;
-          background: url(images/arrow.png) no-repeat 0 0; 
-				}
 			} 
 		}
      &.mega-hover a, a:hover {

@@ -55,26 +55,6 @@ $menubar-hover-bg-color: hsl(0,0,60);
 }
 
 ul.hmenu {
-   margin: 0;
-   padding: 0;
-   border: none;
-	li {
-     margin: 0;
-     padding: 0;
-     border: none;
-     float: left;
-     margin: 0;
-     padding: 0;
-     font-size: 13px;
-     font-weight: bold;
-     a {
-       float: left;
-       display: block;
-       color: #fff;
-       padding: 12px 38px 12px 25px;
-       background-image: $background-image repeat-x 100% 0;
-			@if $use-text-shadow {
-       	text-shadow: 1px 1px 1px #000;
   list-style: none;
   position: relative;
   padding: 0;

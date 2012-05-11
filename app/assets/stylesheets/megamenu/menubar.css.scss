@@ -11,6 +11,19 @@ $base-font-size: 13px;
 $font-size: 1em;
 $font: Arial, sans-serif;
 $line-height: 1em;
+$menubar-text-color: hsl(0,0,100);
+$menubar-hover-text-color: #000;
+$mega-hover-text-color: #000;
+$mega-hover-hover-color: hsl(0,0,0);
+$mega-hover-hover-bg-color: #CCC;
+
+$menubar-text-shadow: hsl(0,0,0);
+$menubar-icon-image: url(images/arrow.png);
+$menubar-height: 40px;
+$menubar-hover-position: -40px;
+$subcontainer-image: url(images/bg_sub_left.png);
+$menubar-background-color: #222;
+$menubar-hover-bg-color: hsl(0,0,60);
 
 //@import 'black';
 @import 'blue';

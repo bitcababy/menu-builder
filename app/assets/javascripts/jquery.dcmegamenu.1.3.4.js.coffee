@@ -16,7 +16,7 @@
       classContainer: "submenu"
       classSubParent: "hmenu-hdr"
       classSubLink: "hmenu-hdr"
-      classWidget: "dc-extra"
+      classWidget: "extra"
       rowItems: 3
       speed: "fast"
       effect: "fade"

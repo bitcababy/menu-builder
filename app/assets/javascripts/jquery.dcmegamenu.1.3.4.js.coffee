@@ -13,7 +13,7 @@
     defaults =
       direction: "horizontal"
       classParent: "megamenu"
-      classContainer: "sub-container"
+      classContainer: "submenu"
       classSubParent: "hmenu-hdr"
       classSubLink: "hmenu-hdr"
       classWidget: "dc-extra"

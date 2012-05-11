@@ -93,12 +93,12 @@ ul.hmenu {
      &.mega-hover a .megamenu-icon {
        background-position: 0 100%; 
 		}
-     .sub-container {
-       position: absolute;
 			background-color: $subcontainer-color;
        background-image: url(images/bg_sub_left.png) no-repeat 0 100%;
-       padding-left: 20px;
-       margin-left: -3px; 
+    .submenu {
+      position: absolute;
+      padding-left: 20px;
+      margin-left: -3px; 
 		}
      .sub {
 				background-color: $subcontainer-color;		

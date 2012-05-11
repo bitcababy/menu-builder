@@ -8,6 +8,7 @@ class CreateMenus < ActiveRecord::Migration
 			t.boolean		:visible
 			t.string		:link
 
+			t.string		:name
       t.timestamps
     end
 

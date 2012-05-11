@@ -103,7 +103,7 @@
               if defaults.fullWidth is true
                 fw = menuWidth - cpad
                 $mainSub.parent("." + clContainer).css width: fw + "px"
-                $dcMegaMenuObj.addClass "full-width"
+                $menuObj.addClass "full-width"
               iw = $(".mega-unit", $mainSub).outerWidth(true)
               rowItems = $(".row:eq(0) .mega-unit", $mainSub).length
               inneriw = iw * rowItems

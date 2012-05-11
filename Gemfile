@@ -51,7 +51,7 @@ group :test do
 	gem 'rspec-rails'
 	gem 'rspec-cells'
 	gem 'cucumber'
-	gem 'cucumber-rails'
+	gem 'cucumber-rails', require: false
 	gem 'machinist'
 	gem 'pickle'
 	gem 'database_cleaner'

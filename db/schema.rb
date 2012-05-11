@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 10) do
     t.boolean  "enabled"
     t.boolean  "visible"
     t.string   "link"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

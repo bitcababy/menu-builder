@@ -1,8 +1,4 @@
 MenuBuilder::Application.routes.draw do
-	1.upto(2) do |i|
-  	get "test/dropdown#{i}"
-	end
-
   get "test/vertical"
 	get 'test/menubar', controller: :test, action: :menubar
 	root :to => 'test#menubar'

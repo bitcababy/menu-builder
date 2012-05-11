@@ -66,13 +66,23 @@
       megaSetup = ->
         $arrow = "<span class=\"mbar-icon\"></span>"
         clParentLi = clParent + "-li"
+        menuWidth = $menuObj.outerWidth()
+
+				# For each menubar item
+        $("> li", $menuObj).each ->
+					# The item's submenu list
           $mainSub = $("> ul", this)
           $primaryLink = $("> a", this)
+
+					# It has items
           if $mainSub.length
             $primaryLink.addClass(clParent).append $arrow
+						# Add 'sub' class and wrap the whole thing in a div
             $mainSub.addClass("sub").wrap "<div class=\"" + clContainer + "\" />"
+	
             pos = $(this).position()
             pl = pos.left
+
             if $("ul", $mainSub).length
               $(this).addClass clParentLi
               $("." + clContainer, this).addClass "mega"

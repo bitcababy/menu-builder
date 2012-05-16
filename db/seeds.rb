@@ -6,18 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Menu.delete_all
+MenuItem.delete_all
 
 menubar = Menubar.create!
 
-menubar.children << (Menu.create! text: 'Home')
-menubar.children << (mp = Menu.create! text: 'Products')
+menubar.children << (MenuItem.create! text: 'Home')
+menubar.children << (mp = MenuItem.create! text: 'Products')
+
+mp.children << (MenuItem.create! text: 'Product 1')
+mp.children << (MenuItem.create! text: 'Product 2')
+
+menubar.children << (mp = MenuItem.create! text: 'Cities')
+mp.children << (m1 = MenuItem.create! text: 'New York')
+m1.children << (MenuItem.create! text: 'Albany')
+m1.children << (MenuItem.create! text: 'Elmira')
+mp.children << (m1 = MenuItem.create! text: 'Massachusetts')
+m1.children << (MenuItem.create! text: 'Arlington')
+m1.children << (MenuItem.create! text: 'Belmont')
+m1.children << (MenuItem.create! text: 'Cambridge')
+
 menubar.save!
-
-mp.children << (Menu.create! text: 'Product 1')
-mp.children << (Menu.create! text: 'Product 2')
-mp.save!
-
-
-
 

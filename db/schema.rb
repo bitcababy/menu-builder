@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 10) do
 
-  create_table "menus", :force => true do |t|
+  create_table "menu_items", :force => true do |t|
     t.string   "type"
     t.integer  "parent_id"
     t.string   "text"
@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(:version => 10) do
     t.datetime "updated_at", :null => false
   end
 
-  add_index "menus", ["parent_id"], :name => "index_menus_on_parent_id"
-  add_index "menus", ["type"], :name => "index_menus_on_type"
+  add_index "menu_items", ["parent_id"], :name => "index_menu_items_on_parent_id"
+  add_index "menu_items", ["type"], :name => "index_menu_items_on_type"
+  add_index "menu_items", ["visible"], :name => "index_menu_items_on_visible"
 
 end

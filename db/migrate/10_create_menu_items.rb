@@ -1,6 +1,6 @@
-class CreateMenus < ActiveRecord::Migration
+class CreateMenuItems < ActiveRecord::Migration
   def change
-    create_table :menus do |t|
+    create_table :menu_items do |t|
 			t.string		:type
       t.integer 	:parent_id
       t.string 		:text
@@ -12,7 +12,8 @@ class CreateMenus < ActiveRecord::Migration
       t.timestamps
     end
 
-		add_index :menus, :type
-		add_index :menus, :parent_id
+		add_index :menu_items, :type
+		add_index :menu_items, :parent_id
+		add_index :menu_items, :visible
   end
 end

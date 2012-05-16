@@ -1,6 +1,6 @@
 require 'machinist/active_record'
 
-Menu.blueprint do
+MenuItem.blueprint do
 	parent			{ nil }
 	text				{ "Item_#{sn}" }
 	enabled			{ true }
@@ -8,6 +8,6 @@ Menu.blueprint do
 	children(0)
 end
 
-Menu.blueprint(:menubar) do
+MenuItem.blueprint(:menubar) do
 end
 	

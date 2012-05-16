@@ -110,19 +110,12 @@ $menubar-hover-bg-color: hsl(0,0,60);
       background: $mega-hover-hover-bg-color;
       color: $mega-hover-hover-color; 
 		}
-   &.mega-hover a {
-      background-position: 100% $menubar-hover-position;
-      color: $mega-hover-text-color;
+    &.hovering a, a:hover {
+      background-position: 100% $mb-hover-position;
+      color: $mb-hover-text-color;
+      background: $mb-hover-bg-color;
       text-shadow: none;
  		}
-		a:hover {
-      background-position: 100% $menubar-hover-position;
-      background: $menubar-hover-bg-color;
-      color: $menubar-hover-text-color;
-      text-shadow: none;
-		}
-    
-    &.mega-hover a .mbar-icon {
       background-position: 0 100%; 
 		}
     .submenu {

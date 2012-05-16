@@ -35,32 +35,32 @@
     $menuObj.each (options) ->
       megaOver = ->
         subNav = $(".sub", this)
-        $(this).addClass "mega-hover"
+        $(this).addClass "hovering"
         $(subNav).fadeIn defaults.speed  if defaults.effect is "fade"
         $(subNav).show defaults.speed  if defaults.effect is "slide"
         defaults.beforeOpen.call this
 
       megaAction = (obj) ->
         subNav = $(".sub", obj)
-        $(obj).addClass "mega-hover"
+        $(obj).addClass "hovering"
         $(subNav).fadeIn defaults.speed  if defaults.effect is "fade"
         $(subNav).show defaults.speed  if defaults.effect is "slide"
         defaults.beforeOpen.call this
 
       megaOut = ->
         subNav = $(".sub", this)
-        $(this).removeClass "mega-hover"
+        $(this).removeClass "hovering"
         $(subNav).hide()
         defaults.beforeClose.call this
 
       megaActionClose = (obj) ->
         subNav = $(".sub", obj)
-        $(obj).removeClass "mega-hover"
+        $(obj).removeClass "hovering"
         $(subNav).hide()
         defaults.beforeClose.call this
 
       megaReset = ->
-        $("li", $menuObj).removeClass "mega-hover"
+        $("li", $menuObj).removeClass "hovering"
         $(".sub", $menuObj).hide()
 
       megaSetup = ->
@@ -165,11 +165,11 @@
 
         if defaults.event is "click"
           $("body").mouseup (e) ->
-            megaReset()  unless $(e.target).parents(".mega-hover").length
+            megaReset()  unless $(e.target).parents(".hovering").length
 
           $("> li > a." + clParent, $menuObj).click (e) ->
             $parentLi = $(this).parent()
-            if $parentLi.hasClass("mega-hover")
+            if $parentLi.hasClass("hovering")
               megaActionClose $parentLi
             else
               megaAction $parentLi

@@ -9,6 +9,13 @@
 //@import 'grey';
 //@import 'white';
 
+@if $style == "dark" {
+	$mb-text-shadow: 1 1 1 hsl(0, 0, 0);
+	$mb-hover-text-color: hsl(0, 0, 100);
+	$mb-hover-bg-color: hsla(0, 0, 100, 0.3);
+	$mb-selected-bg-color: hsla(0, 0, 80, 0.3);
+}
+
 .hmenu {
   ul {
 	 list-style: none;

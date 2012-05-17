@@ -35,32 +35,32 @@
     $menuObj.each (options) ->
       megaOver = ->
         subNav = $(".sub", this)
-        $(this).addClass "hovering"
+        $(this).addClass "selected"
         $(subNav).fadeIn defaults.speed  if defaults.effect is "fade"
         $(subNav).show defaults.speed  if defaults.effect is "slide"
         defaults.beforeOpen.call this
 
       megaAction = (obj) ->
         subNav = $(".sub", obj)
-        $(obj).addClass "hovering"
+        $(obj).addClass "selected"
         $(subNav).fadeIn defaults.speed  if defaults.effect is "fade"
         $(subNav).show defaults.speed  if defaults.effect is "slide"
         defaults.beforeOpen.call this
 
       megaOut = ->
         subNav = $(".sub", this)
-        $(this).removeClass "hovering"
+        $(this).removeClass "selected"
         $(subNav).hide()
         defaults.beforeClose.call this
 
       megaActionClose = (obj) ->
         subNav = $(".sub", obj)
-        $(obj).removeClass "hovering"
+        $(obj).removeClass "selected"
         $(subNav).hide()
         defaults.beforeClose.call this
 
       megaReset = ->
-        $("li", $menuObj).removeClass "hovering"
+        $("li", $menuObj).removeClass "selected"
         $(".sub", $menuObj).hide()
 
       megaSetup = ->
@@ -77,6 +77,7 @@
 					# It has items
           if $mainSub.length
             $primaryLink.addClass(clParent).append $arrow
+
 						# Add 'sub' class and wrap the whole thing in a div
             $mainSub.addClass("sub").wrap "<div class=\"" + clContainer + "\" />"
 	
@@ -104,16 +105,20 @@
                 hdrs.slice(i, i + rowSize).wrapAll "<div class=\"row\" />"
                 i += rowSize
               $mainSub.show()
+
               pw = $(this).width()
               pr = pl + pw
               mr = menuWidth - pr
               subw = $mainSub.outerWidth()
               totw = $mainSub.parent("." + clContainer).outerWidth()
               cpad = totw - subw
+
               if defaults.fullWidth is true
                 fw = menuWidth - cpad
+
                 $mainSub.parent("." + clContainer).css width: fw + "px"
                 $menuObj.addClass "full-width"
+
               iw = $(".mega-unit", $mainSub).outerWidth(true)
               rowItems = $(".row:eq(0) .mega-unit", $mainSub).length
               inneriw = iw * rowItems
@@ -165,7 +170,7 @@
 
         if defaults.event is "click"
           $("body").mouseup (e) ->
-            megaReset()  unless $(e.target).parents(".hovering").length
+            megaReset() unless $(e.target).parents(".selected").length
 
           $("> li > a." + clParent, $menuObj).click (e) ->
             $parentLi = $(this).parent()

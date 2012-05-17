@@ -50,77 +50,163 @@
 			display: none; 
 			}
 		}
+		position: relative;
 		@include flush;
 	}
+
   .sub {
-	 display: none;
-	 ul {
-		display: block; 
+		ul {
+			display: block;
+		}
+    li.hmenu-hdr li a {
+			@if $use-mb-icon {
+	      padding: 4px 5px 4px 20px;
+	      background: {
+					image: url(images/arrow_off.png);
+					repeat: no-repeat;
+					position: 5px 8px;
+				}
+	      font-weight: normal;
+	      &:hover {
+		      background: {
+						color: $item-hover-bg;
+						image: url(images/arrow_off.png);
+						repeat: no-repeat;
+						position: 5px 8px;
+					}
+				}
+			}
+			&:hover {
+        color: $item-hover-color;
+			}
+			.selected {
+				color: $mb-selected-bg-color;
+			}
+		}
+    ul li {
+      padding-right: 0; 
 		}
 	}
-}
 
   li {
-    margin: 0;
-    padding: 0;
 		@include flush;
     border: none;
     float: left;
-    margin: 0;
-    padding: 0;
-    font-size: $font-size;
-    font-weight: bold;
-		// ul.hmenu li a
+		font: {
+			size: $font-size;
+			weight: $mb-weight;
+		};
     a {
       float: left;
       display: block;
-      color: $menubar-text-color;
+      color: $mb-text-color;
       padding: 12px 38px 12px 25px;
-      background: $menubar-background-color $menubar-background-image repeat-x 100% 0;
-      text-shadow: 1px 1px 1px $menubar-text-shadow;
-      text-decoration: none;
-    &.mega {
-        position: relative;
+			background: {
 				image: $mb-bg-image;
+				repeat: repeat-x;
+				position: 100% 0;
 			}
-			
-      .mbar-icon {
-        display: block;
-        position: absolute;
-        top: 18px;
-        right: 15px;
-        width: 8px;
-        height: 6px;
-        background: $menubar-icon-image no-repeat 0 0;
+      text-shadow: $mb-text-shadow;
+      text-decoration: none;
+			position: relative;
+
+	    &.mega { position: relative;}
+
+			@if $use-mb-icon {
+ 	    .mbar-icon {
+	        display: block;
+	        position: absolute;
+	        top: 18px;
+	        right: 15px;
+	        width: 8px;
+	        height: 6px;
+					background: {
+						image:  $mb-icon-image;
+						repeat: no-repeat;
+						position: 0 0;
+					}
+				}
 			}
 		}
- 		.mega-hover a:hover {
-      background-position: 0 100%;
-      background: $mega-hover-hover-bg-color;
-      color: $mega-hover-hover-color; 
-		}
-    &.hovering a, a:hover {
-      background-position: 100% $mb-hover-position;
+//		.selected a:hover {
+//     	background-position: 0 100%;
+//      background: $mb-hover-bg-color;
+//     	color: $mb-hover-text-color; 
+//		}
+
+    &.selected a, a:hover {
       color: $mb-hover-text-color;
-      background: $mb-hover-bg-color;
+			background: {
+				image: none;
+				color: $mb-hover-bg-color;
+				position: 100% $mb-hover-position;
+			};
       text-shadow: none;
  		}
+		&.selected a {
+			background-color: $mb-selected-bg-color;
+		}
+
+    &.selected a .mbar-icon {
       background-position: 0 100%; 
 		}
-    .submenu {
+
+		.submenu {
       position: absolute;
-      background: $subcontainer-image no-repeat 0 100%;
+			background: {
+				image: $submenu-bg-image;
+				repeat: no-repeat;
+				position: 0 100%;
+			};
+      background: $submenu-bg-image no-repeat 0 100%;
       padding-left: 20px;
-      margin-left: -3px; 
+      margin-left: -3px;
+			&.mega .sub {
+	      padding: 20px 0px 10px 20px; 
+			}
+			&.non-mega {
+		    .sub {
+		      padding: 20px 20px 20px 0; 
+				}
+		    li {
+					@include flush;
+		      width: 190px; // This will be calculated
+		      a {
+						@if $use-mb-icon {
+			        padding: 7px 5px 7px 22px;
+			 	      background: {
+								image: url(images/arrow_off.png);
+								repeat: no-repeat;
+								position: 7px 10px;
+							}
+				      &:hover {
+					      background: {
+									color: $item-hover-bg;
+									image: url(images/arrow_on.png);
+									repeat: no-repeat;
+									position: 7px 10px;
+								}
+							}
+						}
+						&:hover {
+							color: $item-hover-color;
+						}
+					}
+				}
+			}
 		}
     .sub {
-      background: url(images/bg_sub.png) no-repeat 100% 100%;
-      padding: 20px 20px 20px 10px; 
-		}
-    .submenu.mega .sub {
-      padding: 20px 20px 10px 0; 
-		}
-    .sub {
+      padding: 20px 20px 20px 10px;
+			background: {
+				attachment: scroll;
+				image: url(images/bg_sub.png);
+				repeat: no-repeat;
+				origin: padding-box;
+				position: {
+					x: 100%;
+					y: 100%;
+				};
+			};
       .row {
         width: 100%;
         overflow: hidden;
@@ -139,6 +225,19 @@
             margin-right: 0; 
 					}
 				}
+	      &.hmenu-hdr a.hmenu-hdr-a {
+	        padding: 5px 5px 5px 15px;
+	        margin-bottom: 5px;
+					background-color: $hdr-bg-color;
+	        text-transform: uppercase;
+	        font-weight: bold;
+	        color: $hdr-color;
+	        text-shadow: $item-shadow;
+	        &:hover {
+	          color: $hdr-hover-color;
+	          text-shadow: none; 
+					}
+				}
 			}
 	    a {
 	      background: none;
@@ -150,52 +249,6 @@
 	      float: none;
 	      text-decoration: none;
 	      font-size: 1em; 
-			}
-      li.hmenu-hdr a.hmenu-hdr-a {
-        padding: 5px 5px 5px 15px;
-        margin-bottom: 5px;
-        background: $subcontainer-color url(images/bg_mega_hdr.png) no-repeat 0 0;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: $item-color;
-        text-shadow: 1px 1px 1px $item-shadow-color;
-        &:hover {
-          color: #000;
-          text-shadow: none; 
-				}
-			}
-		}
-	}
-
-  .sub {
-    li.hmenu-hdr li a {
-      padding: 4px 5px 4px 20px;
-      background: url(images/arrow_off.png) no-repeat 5px 8px;
-      font-weight: normal;
-      &:hover {
-        color: $item-hover-color;
-        background: $item-hover-bg url(images/arrow_on.png) no-repeat 5px 8px; 
-			}
-		}
-    ul li {
-      padding-right: 0; 
-		}
-	}
-  li .submenu.non-mega {
-    .sub {
-      padding: 20px 20px 20px 0; 
-		}
-    li {
-      padding: 0;
-      width: 190px;
-      margin: 0;
-      a {
-        padding: 7px 5px 7px 22px;
-        background: url(images/arrow_off.png) no-repeat 7px 10px;
-        &:hover {
-          color: $item-hover-color;
-          background: $item-hover-bg url(images/arrow_on.png) no-repeat 7px 10px; 
-				}
 			}
 		}
 	}

@@ -21,6 +21,7 @@
       speed: "fast"
       effect: "fade"
       event: "hover"
+      mbarIcon: false
       fullWidth: false
 
       onLoad: ->
@@ -64,7 +65,8 @@
         $(".sub", $menuObj).hide()
 
       megaSetup = ->
-        $arrow = "<span class=\"mbar-icon\"></span>"
+        # $arrow = ""
+        $arrow = "<span class=\"mbar-icon\"></span>" #if mbarIcon
         clParentLi = clParent + "-li"
         menuWidth = $menuObj.outerWidth()
 
@@ -174,11 +176,12 @@
 
           $("> li > a." + clParent, $menuObj).click (e) ->
             $parentLi = $(this).parent()
-            if $parentLi.hasClass("hovering")
+            if $parentLi.hasClass("selected")
               megaActionClose $parentLi
             else
               megaAction $parentLi
             e.preventDefault()
+
         defaults.onLoad.call this
 
       clSubParent = defaults.classSubParent

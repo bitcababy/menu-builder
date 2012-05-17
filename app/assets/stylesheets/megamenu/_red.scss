@@ -1,5 +1,15 @@
-$background-hdr-image: url(images/bg_mega_hdr.png);
-$background-hdr-color: #db323a;
-$border-color: #E41E1F;
+$hue: 357;
+$dark: true;
+
 $mb-bg-image: url(images/bg_red.png);
 $mb-bg-color: hsl($hue, 80, 60);
+$hover-color: hsl($hue, 30, 60);
+
+$bg-hdr-color: hsl($hue, 41, 32);
+
+$mb-text-shadow: 1 1 1 black;
+
+$item-hover-color: hsl(12, 96, 33);
+
+$hdr-hover-color: hsl($hue, 30, 80);
+$hdr-bg-color: hsl($hue, 80, 50);

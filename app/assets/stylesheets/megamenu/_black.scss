@@ -1,11 +1,18 @@
 $mb-bg-image: url(images/bg_black.png);
 $mb-bg-color: hsl(0, 0, 13);
+$hover-color: hsl(0, 0, 60);
+$mb-hover-bg-color: hsla(0, 0, 80, 0.5);
 
 $background-hdr-image: url(images/bg_mega_hdr.png);
-$background-hdr-color: #6b6b6b;
+$bg-hdr-color: hsl(0, 0, 42);
 
-$border-color: #1B1B1B;
+$subcontainer-color: hsl(0, 0, 80);
+$mb-text-shadow: 1 1 1 hsl(0, 0, 20);
 
-$subcontainer-color: rgb(204, 204, 204);
-$hover-color: rgb(153, 153, 153);
-$text-shadow-color: #333;
+$item-color: hsl(0, 0, 100);
+$item-hover-color: hsl(12, 96, 33);
+$item-hover-bg: hsl(0, 0, 94);
+
+$hdr-color: hsl(0, 0, 100);
+$hdr-hover-color: hsl(0, 0, 80);
+$hdr-bg-color: hsl(0, 0, 30);

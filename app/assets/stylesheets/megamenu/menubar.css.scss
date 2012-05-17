@@ -16,7 +16,13 @@
 	$mb-selected-bg-color: hsla(0, 0, 80, 0.3);
 }
 
+@mixin flush {
+  padding: 0;
+  margin: 0;
+}
+
 .hmenu {
+	@include flush;
   ul {
 	 list-style: none;
 	 li {
@@ -28,6 +34,7 @@
 	 position: relative;
 	 padding: 0;
 	 margin: 0; 
+		@include flush;
 	}
   .sub {
 	 display: none;
@@ -58,6 +65,7 @@
   li {
     margin: 0;
     padding: 0;
+		@include flush;
     border: none;
     float: left;
     margin: 0;

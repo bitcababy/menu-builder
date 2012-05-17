@@ -22,7 +22,26 @@
 }
 
 .hmenu {
+  list-style: none;
+  position: relative;
 	@include flush;
+  width: 100%;
+  height: $mb-height;
+  border-right: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  font: normal $base-font-size $font;
+	line-height: $line-height;
+
+	background: {
+		color: $mb-bg-color;
+		image: $mb-bg-image;
+		repeat: repeat-x;
+		position: {
+			x: 0;
+			y: -80px;
+		}
+	};
+
   ul {
 	 list-style: none;
 	 li {
@@ -31,9 +50,6 @@
 			display: none; 
 			}
 		}
-	 position: relative;
-	 padding: 0;
-	 margin: 0; 
 		@include flush;
 	}
   .sub {
@@ -45,23 +61,6 @@
 }
 
 #menubar {
-  list-style: none;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-
-  background: $background-color $menubar-background-image repeat-x 0 -80px;
-  height: $menubar-height;
-  border-right: 1px solid $border-color;
-  border-left: 1px solid $border-color;
-  position: relative;
-  font: normal $base-font-size $font;
-	line-height: $line-height;
-
-  .sub ul {
-    display: block; 
-	}
   li {
     margin: 0;
     padding: 0;

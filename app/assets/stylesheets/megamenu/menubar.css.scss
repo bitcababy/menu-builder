@@ -93,6 +93,7 @@ $menubar-hover-bg-color: hsl(0,0,60);
       text-decoration: none;
     &.mega {
         position: relative;
+				image: $mb-bg-image;
 			}
 			
       .mbar-icon {

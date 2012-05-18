@@ -1,0 +1,42 @@
+%li
+	%span.drop Contact Form
+	/ Begin Item
+	.megamenu_fullwidth
+		/ Begin Item Container
+		.col_4
+			%h3 Contact Us !
+			%p This is a fully working simple contact form. Just add your email address and you're done !
+			.contact_form
+				.message
+					#alert
+				%form#megamenu_form{:action => "js/sendmail.php", :method => "post"}
+					%label{:for => "name"}
+						Name
+						%span.required *
+					%br/
+					%input#name.form_element{:autocomplete => "off", :name => "name", :type => "text", :value => ""}/
+					%br/
+					%label{:for => "email"}
+						Email
+						%span.required *
+					%br/
+					%input#email.form_element{:autocomplete => "off", :name => "email", :type => "text", :value => ""}/
+					%br/
+					%label{:for => "message"}
+						Message
+						%span.required *
+					%br/
+					%textarea#message.form_element{:name => "message"}
+					%p.special
+						%label{:for => "last"} Don't fill this in :
+						%input#last.form_element{:name => "last", :type => "text", :value => ""}/
+					.form_buttons
+						%input#submit.button{:type => "submit", :value => "Submit"}/
+						%input#reset.button{:type => "reset", :value => "Reset"}/
+		.col_8
+			%h3 Some Inline Text
+			%p Nullam ultricies semper erat in lacinia. In ac tellus vitae orci tristique hendrerit sed sit amet lectus. Vivamus dapibus mattis diam, vitae imperdiet nunc vehicula in. Maecenas quam mauris, convallis sit amet varius ut, pretium a enim. Maecenas quis nisl quis ante dictum vehicula at nec nunc. Morbi eget sem nec felis condimentum posuere. Curabitur in leo mi, eget mollis nunc. Morbi enim sapien, dictum ac mollis nec.
+			%img.inline_img{:alt => "", :src => "img/img_sample.jpg"}/
+			%p Praesent sed est ac lectus blandit tincidunt. Vestibulum rutrum vestibulum suscipit. Duis commodo condimentum risus at dignissim. In quis justo at felis vulputate dapibus. Suspendisse quis risus turpis, ut pharetra arcu. Donec adipiscing, quam non faucibus luctus, mi arcu blandit diam, at faucibus mi ante vel augue.
+	/ End Item Container
+/ End Item

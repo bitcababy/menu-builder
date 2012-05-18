@@ -44,85 +44,6 @@
 		$(".megamenu").click (event) ->
 			event.stopPropagation()
 
-	$.fn.megaMenuReloaded = (options) ->
-		options = $.extend(
-			menu_speed_show: 300
-			menu_speed_hide: 200
-			menu_speed_delay: 200
-			menu_effect: "open_close_slide"
-			menu_easing: "jswing"
-			menu_click_outside: 0
-			menu_show_onload: 0
-			menubar_trigger: 0
-			menubar_hide: 0
-		, options)
-
-		@each ->
-			megaMenu = $(this)
-			menuItem = $(megaMenu).children("li")
-			menuDropDown = $(menuItem).children(".megamenu_fullwidth")
-			menuDropDownScroller = $(".megamenu_scroller_container")
-			$(menuDropDownScroller).nanoScroller()	if menuDropDownScroller.length > 0
-			$(menuDropDown).css("left", "0").hide()
-			if options.menubar_trigger is 1
-				megamenuBarHide = options.menubar_hide
-				megaMenuTrigger()
-			megaMenuClickOutside()	if options.menu_click_outside is 1
-			if Modernizr.touch
-				$(menuItem).children("span").bind "touchstart", ->
-					$this = $(this)
-					$this.parent("li").siblings().removeClass("active").end().toggleClass "active"
-					$this.parent("li").siblings().find(menuDropDown).slideUp options.menu_speed_hide
-					$this.parent("li").find(menuDropDown).delay(options.menu_speed_delay).slideToggle(options.menu_speed_show).click (event) ->
-						event.stopPropagation()
-			else if options.menu_effect is "hover_fade" or options.menu_effect is "hover_slide" or options.menu_effect is "click_fade" or options.menu_effect is "click_slide"
-				hoverIntentEffect = options.menu_effect
-				hoverIntentEasing = options.menu_easing
-				hoverIntentShow = options.menu_speed_show
-				hoverIntentHide = options.menu_speed_hide
-				hoverIntentConfig =
-					sensitivity: 2
-					interval: 100
-					over: megaMenuOver
-					timeout: 200
-					out: megaMenuOut
-
-				$(menuItem).hoverIntent hoverIntentConfig
-			else if options.menu_effect is "open_close_fade"
-				$(menuItem + ":nth-child(" + options.menu_show_onload + ")").children(".megamenu_fullwidth").show().parent(menuItem).toggleClass "active"
-				$(menuItem).unbind "mouseenter mouseleave"
-				$(menuItem).click ->
-					$this = $(this)
-					$this.siblings().removeClass("active").end().toggleClass "active"
-					$this.siblings().find(menuDropDown).fadeOut options.menu_speed_hide, options.menu_easing
-					$this.find(menuDropDown).delay(options.menu_speed_delay).fadeToggle(options.menu_speed_show, options.menu_easing).click (event) ->
-						event.stopPropagation()
-			else if options.menu_effect is "open_close_slide"
-				$(menuItem + ":nth-child(" + options.menu_show_onload + ")").children(".megamenu_fullwidth").show().parent(menuItem).toggleClass "active"
-				$(menuItem).unbind "mouseenter mouseleave"
-				$(menuItem).click ->
-					$this = $(this)
-					$this.siblings().removeClass("active").end().toggleClass "active"
-					$this.siblings().find(menuDropDown).slideUp options.menu_speed_hide, options.menu_easing
-					$this.find(menuDropDown).delay(options.menu_speed_delay).slideToggle(options.menu_speed_show, options.menu_easing).click (event) ->
-						event.stopPropagation()
-
-	$.fn.megaMenuTabs = (el) ->
-		@each ->
-			menuTabs = $(this)
-			menuTabsNav = menuTabs.find(".megamenu_tabs_nav")
-			menuTabsNav.delegate "li > a", "click", ->
-				menuTabsLinkCurrent = menuTabs.find("a.current").attr("href").substring(1)
-				$menuTabsLink = $(this)
-				menuTabsLinkID = $menuTabsLink.attr("href").substring(1)
-				if (menuTabsLinkID isnt menuTabsLinkCurrent) and (menuTabs.find(":animated").length is 0)
-					menuTabs.find(".megamenu_tabs_nav li a").removeClass "current"
-					$menuTabsLink.addClass "current"
-					menuTabs.find("#" + menuTabsLinkCurrent).fadeOut 300, ->
-						menuTabs.find("#" + menuTabsLinkID).fadeIn 300
-						newHeight = menuTabs.find("#" + menuTabsLinkID).height()
-				false
-
 	$.fn.simplecarousel = (params) ->
 		$(".megamenu").append "<span class=\"megamenu_carousel_prev\"></span><span class=\"megamenu_carousel_next\"></span>"
 		defaults =
@@ -159,4 +80,94 @@
 		unless config.prev is false
 			config.prev.click ->
 				slide "prev", true
+
+		$.fn.megaMenuTabs = (el) ->
+			@each ->
+				menuTabs = $(this)
+				menuTabsNav = menuTabs.find(".megamenu_tabs_nav")
+				menuTabsNav.delegate "li > a", "click", ->
+					menuTabsLinkCurrent = menuTabs.find("a.current").attr("href").substring(1)
+					$menuTabsLink = $(this)
+					menuTabsLinkID = $menuTabsLink.attr("href").substring(1)
+					if (menuTabsLinkID isnt menuTabsLinkCurrent) and (menuTabs.find(":animated").length is 0)
+						menuTabs.find(".megamenu_tabs_nav li a").removeClass "current"
+						$menuTabsLink.addClass "current"
+						menuTabs.find("#" + menuTabsLinkCurrent).fadeOut 300, ->
+							menuTabs.find("#" + menuTabsLinkID).fadeIn 300
+							newHeight = menuTabs.find("#" + menuTabsLinkID).height()
+					false
+
+	$.fn.megaMenuReloaded = (options) ->
+		options = $.extend(
+			menu_speed_show: 300								# Time (in milliseconds) to show a drop down
+			menu_speed_hide: 200								# Time (in milliseconds) to hide a drop down
+			menu_speed_delay: 200								# Time (in milliseconds) before showing a drop down
+			menu_effect: "open_close_slide"			# Drop down effect, choose between 'hover_fade', 'hover_slide', 'click_fade', 'click_slide', 'open_close_fade', 'open_close_slide'
+			menu_easing: "jswing"								# Easing Effect : 'easeInQuad', 'easeInElastic', etc.
+			menu_click_outside: 0								# Clicks outside the drop down close it (1 = true, 0 = false)
+			menu_show_onload: 0									# Drop down to show on page load (type the number of the drop down, 0 for none)
+			menubar_trigger: 0									# Show the menu trigger (button to show / hide the menu bar), only for the fixed version of the menu (1 = show, 0 = hide)
+			menubar_hide: 0											# Hides the menu bar on load (1 = hide, 0 = show)
+		, options)
+
+		@each (options) ->
+			megaMenu = $(this)
+			menuItem = $(megaMenu).children("li")
+			menuDropDown = $(menuItem).children(".megamenu_fullwidth")
+			menuDropDownScroller = $(".megamenu_scroller_container")
+
+			$(menuDropDownScroller).nanoScroller()	if menuDropDownScroller.length > 0
+
+			$(menuDropDown).css("left", "0").hide()
+
+			if options.menubar_trigger is 1
+				megamenuBarHide = options.menubar_hide
+				megaMenuTrigger()
+
+			megaMenuClickOutside()	if options.menu_click_outside is 1
+
+			if Modernizr.touch
+				$(menuItem).children("span").bind "touchstart", ->
+					$this = $(this)
+					$this.parent("li").siblings().removeClass("active").end().toggleClass "active"
+					$this.parent("li").siblings().find(menuDropDown).slideUp options.menu_speed_hide
+					$this.parent("li").find(menuDropDown).delay(options.menu_speed_delay).slideToggle(options.menu_speed_show).click (event) ->
+						event.stopPropagation()
+
+			else if options.menu_effect is "hover_fade" or options.menu_effect is "hover_slide" or options.menu_effect is "click_fade" or options.menu_effect is "click_slide"
+				hoverIntentEffect = options.menu_effect
+				hoverIntentEasing = options.menu_easing
+				hoverIntentShow = options.menu_speed_show
+				hoverIntentHide = options.menu_speed_hide
+				# HoverIntent Configuration
+				hoverIntentConfig =
+					sensitivity: 2			# number = sensitivity threshold (must be 1 or higher)
+					interval: 100				# number = milliseconds for onMouseOver polling interval
+					over: megaMenuOver	# function = onMouseOver callback (REQUIRED)
+					timeout: 200				# number = milliseconds delay before onMouseOut
+					out: megaMenuOut		# function = onMouseOut callback (REQUIRED)
+
+				$(menuItem, this).hoverIntent hoverIntentConfig
+
+			else if options.menu_effect is "open_close_fade"
+				$(menuItem + ":nth-child(" + options.menu_show_onload + ")").children(".megamenu_fullwidth").show().parent(menuItem).toggleClass "active"
+				$(menuItem).unbind "mouseenter mouseleave"
+				$(menuItem).click ->
+					$this = $(this)
+					$this.siblings().removeClass("active").end().toggleClass "active"
+					$this.siblings().find(menuDropDown).fadeOut options.menu_speed_hide, options.menu_easing
+					$this.find(menuDropDown).delay(options.menu_speed_delay).fadeToggle(options.menu_speed_show, options.menu_easing).click (event) ->
+						event.stopPropagation()
+
+			else if options.menu_effect is "open_close_slide"
+				$(menuItem + ":nth-child(" + options.menu_show_onload + ")").children(".megamenu_fullwidth").show().parent(menuItem).toggleClass "active"
+				$(menuItem).unbind "mouseenter mouseleave"
+
+				$(menuItem).click ->
+					$this = $(this)
+					$this.siblings().removeClass("active").end().toggleClass "active"
+					$this.siblings().find(menuDropDown).slideUp options.menu_speed_hide, options.menu_easing
+					$this.find(menuDropDown).delay(options.menu_speed_delay).slideToggle(options.menu_speed_show, options.menu_easing).click (event) ->
+						event.stopPropagation()
+		
 ) jQuery

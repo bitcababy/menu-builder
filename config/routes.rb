@@ -1,7 +1,10 @@
 MenuBuilder::Application.routes.draw do
   get "test/vertical"
+  get "test/fixed"
+  get "test/fixed_carousel"
+	root :to => 'test#fixed'
+
 	get 'test/menubar', controller: :test, action: :menubar
-	root :to => 'test#menubar'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

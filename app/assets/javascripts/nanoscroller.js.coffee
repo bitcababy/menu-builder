@@ -1,5 +1,4 @@
 (($, window, document) ->
-  "use strict"
 
   SCROLLBAR  = 'scrollbar'
   SCROLL     = 'scroll'
@@ -38,7 +37,7 @@
     document.body.removeChild outer
     scrollbarWidth
 
-  class NanoScroll
+  class @NanoScroll
 
     constructor: (el, @options) ->
       @el = $(el)
@@ -177,6 +176,7 @@
       # this sniffing is done to fix a IE7 related bug.
       if window.navigator.appName is 'Microsoft Internet Explorer' and (/msie 7./i).test(window.navigator.appVersion) and window.ActiveXObject
         @content.css height: @content.height()
+
       @contentH  = content.scrollHeight + @scrollW
       @paneH     = @pane.outerHeight()
       paneTop    = parseInt(@pane.css('top'), 10)
@@ -237,9 +237,8 @@
       @pane.hide()
       return
 
-
-  $.fn.nanoScroller = (settings) ->
-    options = $.extend({}, defaults, settings)
+  $.fn.nanoScroller = (options) ->
+    options ||= {}
     @each ->
       me = this
       scrollbar = $.data me, SCROLLBAR
@@ -255,7 +254,6 @@
       return scrollbar.scrollTo(options.scroll)           if options.scroll instanceof $
       return scrollbar.stop()                             if options.stop
       scrollbar.reset()
-    return
-  return
+
 
 )(jQuery, window, document)

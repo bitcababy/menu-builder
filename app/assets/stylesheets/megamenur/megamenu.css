@@ -105,7 +105,6 @@ p{font-size:12px; line-height:21px; margin-bottom:18px}
 	-o-box-shadow: 0 2px 3px #cccccc;
 	box-shadow: 0 2px 3px #cccccc;
 }
-
 .megamenu {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:13px;
@@ -113,138 +112,135 @@ p{font-size:12px; line-height:21px; margin-bottom:18px}
 	padding:0;
 	margin:0;
 }
-
-.megamenu > li {
-	display:inline;
-	border:none;
-	margin:0;
-	border-right:solid 1px #454545;
-	border-left:solid 1px #242424;
-	background-color:transparent;
-	padding: 14px 0 15px 10px;
-	-webkit-transition: background-color 0.4s ease-out;
-	-moz-transition: background-color 0.4s ease-out;
-	-o-transition: background-color 0.4s ease-out;
-	-ms-transition: background-color 0.4s ease-out;
-	transition: background-color 0.4s ease-out;
-}
-.megamenu_fixed .megamenu > li {
-	padding: 15px 0 15px 10px;
-}
-.megamenu > li:hover {
-	background-color:#202020;
-}
-
-.megamenu > li.active,
-.megamenu > li.active:hover {
-	background-color:#131313;
-}
-
-.megamenu_container .megamenu > li:first-child {
-	-webkit-border-radius:3px 0 0 3px;
-	-moz-border-radius:3px 0 0 3px;
-	border-radius:3px 0 0 3px;	
-	border-left:none;
-}
-.megamenu_fixed .megamenu > li:first-child,
-.megamenu_carousel .megamenu > li:first-child {
-	-webkit-border-radius:0 0 0 3px;
-	-moz-border-radius:0 0 0 3px;
-	border-radius:0 0 0 3px;	
-	border-left:none;
-}
-.megamenu > li:last-child {
-	-webkit-box-shadow: 1px 0 0 #242424;
-	-moz-box-shadow: 1px 0 0 #242424;
-	-o-box-shadow: 1px 0 0 #242424;
-	box-shadow: 1px 0 0 #242424;
-}
-.megamenu > li a {
-	text-decoration:none;
-	color:#bbbbbb;
-}
-.megamenu > li a:hover {
-	color:#efefef;
-}
-.megamenu > li span a {
-	color:#ffffff;
-}
-.megamenu > li a:focus {
-	outline:none;
-}
-.megamenu > li .drop,
-.megamenu > li .nodrop {
-	font-size:12px;
-	line-height:44px;
-	text-transform:uppercase;
-	outline:0;
-	text-decoration:none;
-	color:#ffffff;
-	text-shadow:1px 1px 1px #000000;
-}
-.megamenu > li .drop {
-	background:url("img/down.png") no-repeat right 18px;
-	padding:14px 20px 20px 0;
-}
-.megamenu > li .nodrop {
-	padding:14px 5px 20px 0;
-}
-.megamenu > li .drop:hover,
-.megamenu > li .nodrop:hover {
-	cursor:pointer;
-}
+	.megamenu > li {
+		display:inline;
+		border:none;
+		margin:0;
+		border-right:solid 1px #454545;
+		border-left:solid 1px #242424;
+		background-color:transparent;
+		padding: 14px 0 15px 10px;
+		-webkit-transition: background-color 0.4s ease-out;
+		-moz-transition: background-color 0.4s ease-out;
+		-o-transition: background-color 0.4s ease-out;
+		-ms-transition: background-color 0.4s ease-out;
+		transition: background-color 0.4s ease-out;
+	}
+	.megamenu_fixed .megamenu > li {
+		padding: 15px 0 15px 10px;
+	}
+		.megamenu > li:hover {
+			background-color:#202020;
+		}
+		.megamenu > li.active,
+		.megamenu > li.active:hover {
+			background-color:#131313;
+		}
+		.megamenu_container .megamenu > li:first-child {
+			-webkit-border-radius:3px 0 0 3px;
+			-moz-border-radius:3px 0 0 3px;
+			border-radius:3px 0 0 3px;	
+			border-left:none;
+		}
+		.megamenu_fixed .megamenu > li:first-child,
+		.megamenu_carousel .megamenu > li:first-child {
+			-webkit-border-radius:0 0 0 3px;
+			-moz-border-radius:0 0 0 3px;
+			border-radius:0 0 0 3px;	
+			border-left:none;
+		}
+		.megamenu > li:last-child {
+			-webkit-box-shadow: 1px 0 0 #242424;
+			-moz-box-shadow: 1px 0 0 #242424;
+			-o-box-shadow: 1px 0 0 #242424;
+			box-shadow: 1px 0 0 #242424;
+		}
+		.megamenu > li a {
+			text-decoration:none;
+			color:#bbbbbb;
+		}
+			.megamenu > li a:hover {
+				color:#efefef;
+			}
+		.megamenu > li span a {
+			color:#ffffff;
+		}
+		.megamenu > li a:focus {
+			outline:none;
+		}
+		.megamenu > li .drop,
+		.megamenu > li .nodrop {
+			font-size:12px;
+			line-height:44px;
+			text-transform:uppercase;
+			outline:0;
+			text-decoration:none;
+			color:#ffffff;
+			text-shadow:1px 1px 1px #000000;
+		}
+		.megamenu > li .drop {
+			background:url("img/down.png") no-repeat right 18px;
+			padding:14px 20px 20px 0;
+		}
+		.megamenu > li .nodrop {
+			padding:14px 5px 20px 0;
+		}
+		.megamenu > li .drop:hover,
+		.megamenu > li .nodrop:hover {
+			cursor:pointer;
+		}
 
 /* 2. Mega Menu Trigger Button */
 
 #megamenu_trigger {
-position: fixed;
-z-index:2;
-margin:0 auto;
-left:50%;
-margin-left:510px;
-top: 0; 
-width:35px;
-height:46px;
-background:url("img/button_up.png") right no-repeat #121212;
-display: block;
-   -webkit-border-radius: 0 0 3px 3px;
--moz-border-radius: 0 0 3px 3px;
-   border-radius: 0 0 3px 3px;
+	position: fixed;
+	z-index:2;
+	margin:0 auto;
+	left:50%;
+	margin-left:510px;
+	top: 0; 
+	width:35px;
+	height:46px;
+	background:url("img/button_up.png") right no-repeat #121212;
+	display: block;
+    -webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
 }
 #megamenu_trigger.active {
-background:url("img/button_down.png") right no-repeat #121212;
+	background:url("img/button_down.png") right no-repeat #121212;
 }
 
 /* 3. Mega Menu Carousel Buttons */
 
 .megamenu_carousel_frame {
-width:960px;
-overflow:hidden;
-height:54px;
+	width:960px;
+	overflow:hidden;
+	height:54px;
 }
 .megamenu_carousel_prev,
 .megamenu_carousel_next {
-display:block;
-padding:0;
-margin:0;
-width:15px;
-height:30px;
-position:absolute;
-top:50%;
-margin-top:-15px;
+	display:block;
+	padding:0;
+	margin:0;
+	width:15px;
+	height:30px;
+	position:absolute;
+	top:50%;
+	margin-top:-15px;
 }
 .megamenu_carousel_prev:hover,
 .megamenu_carousel_next:hover {
-cursor:pointer;
+	cursor:pointer;
 }
-.megamenu_carousel_prev {
-	background:url("img/previous.png") no-repeat;
-	left:-15px;
-}
-.megamenu_carousel_next {
-	background:url("img/next.png") no-repeat;
-	right:-15px;
-}
+	.megamenu_carousel_prev {
+		background:url("img/previous.png") no-repeat;
+		left:-15px;
+	}
+	.megamenu_carousel_next {
+		background:url("img/next.png") no-repeat;
+		right:-15px;
+	}
 
 
 
